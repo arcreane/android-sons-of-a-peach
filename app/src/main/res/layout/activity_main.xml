@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond4"
+    android:scaleType = "centerCrop"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="291dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/accueil"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="-90dp"
+        android:background="@drawable/round_corner"
+        android:padding="10dp"
+        android:text="Mastermind Froot"
+        android:textStyle="bold"
+        android:textColor="@color/greenFonce"
+
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:text="Fuck yeah !"
+        android:textColor="@color/greenFonce"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="458dp" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="282dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="80dp"
+        android:background="@color/greenFonce"
+        android:text="Easy"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="535dp" />
+
+    <Button
+        android:id="@+id/play2"
+        android:layout_width="282dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="3dp"
+        android:background="#CCC"
+        android:text="Medium"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="535dp" />
+    <Button
+        android:id="@+id/play3"
+        android:layout_width="282dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="3dp"
+        android:background="#CCC"
+        android:text="Hard"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="535dp" />
+    <Button
+        android:id="@+id/score"
+        android:layout_width="282dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/gradient_logo"
+        android:text="High scores"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="535dp" />
+</LinearLayout>
+
