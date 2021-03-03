@@ -34,7 +34,7 @@ public class main_game extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_game);
         // Button
         // Buttons minus
         b_minus_a = (Button) findViewById(R.id.b_minus_a);
