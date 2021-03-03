@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MasterFruits">
-        <activity android:name=".MainGameActivity" />
         <activity android:name=".game" />
         <activity android:name=".MainActivity">
             <intent-filter>
