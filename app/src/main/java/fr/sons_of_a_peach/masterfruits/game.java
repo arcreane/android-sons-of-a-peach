@@ -57,9 +57,9 @@ public class game extends AppCompatActivity {
 
         // TextView
         // User screen Number
-        tv_number_a = (TextView) findViewById(R.id.tv_number_a);
-        tv_number_b = (TextView) findViewById(R.id.tv_number_b);
-        tv_number_c = (TextView) findViewById(R.id.tv_number_c);
+       tv_number_a = (TextView) findViewById(R.id.tv_number_a);
+       tv_number_b = (TextView) findViewById(R.id.tv_number_b);
+       tv_number_c = (TextView) findViewById(R.id.tv_number_c);
         // Info about good numbers
         tv_info = (TextView) findViewById(R.id.tv_info);
         // Numbers output

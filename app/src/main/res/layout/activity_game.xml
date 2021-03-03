@@ -45,15 +45,31 @@
 
     <LinearLayout
         android:id="@+id/lay_numbers"
-        android:layout_width="123dp"
+        android:layout_width="match_parent"
         android:layout_height="110dp"
         android:layout_above="@+id/lay_minus"
         android:layout_marginBottom="-7dp"
         android:weightSum="3">
 
 
-        <Button
+        <ImageButton
             android:id="@+id/Button1"
+            android:layout_width="136dp"
+            android:layout_height="111dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/fraise"
+            android:scaleType="centerCrop"
+            />
+            <ImageButton
+            android:id="@+id/Button2"
+            android:layout_width="136dp"
+            android:layout_height="111dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/fraise"
+            android:scaleType="centerCrop"
+            />
+            <ImageButton
+            android:id="@+id/Button3"
             android:layout_width="136dp"
             android:layout_height="111dp"
             android:adjustViewBounds="true"
