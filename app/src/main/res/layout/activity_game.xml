@@ -45,38 +45,31 @@
 
     <LinearLayout
         android:id="@+id/lay_numbers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
+        android:layout_width="123dp"
+        android:layout_height="110dp"
         android:layout_above="@+id/lay_minus"
+        android:layout_marginBottom="-7dp"
         android:weightSum="3">
 
-        <TextView
-            android:id="@+id/tv_number_a"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="1" />
+
+        <Button
+            android:id="@+id/Button1"
+            android:layout_width="136dp"
+            android:layout_height="111dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/fraise"
+            android:scaleType="centerCrop"
+            />
 
         <TextView
-            android:id="@+id/tv_number_b"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="2" />
-        <TextView
             android:id="@+id/tv_number_c"
-            android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="3" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/lay_minus"
@@ -139,22 +132,25 @@
         android:text="Resign"/>
 
     <ScrollView
-        android:layout_below="@+id/b_resign"
-        android:layout_above="@+id/lay_plus"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="325dp"
+        android:layout_above="@+id/lay_plus"
+        android:layout_below="@+id/b_resign"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="183dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_output"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="10dp"/>
+                android:padding="10dp" />
         </LinearLayout>
     </ScrollView>
+
 
 </RelativeLayout>
