@@ -7,74 +7,80 @@
     android:background="@drawable/fond4"
     tools:context=".game">
 
-    <LinearLayout
-        android:id="@+id/lay_plus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/lay_numbers"
-        android:weightSum="3">
 
-        <Button
-            android:layout_margin="3dp"
-            android:id="@+id/b_plus_a"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
-        <Button
-            android:layout_margin="3dp"
-            android:id="@+id/b_plus_b"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
-        <Button
-            android:layout_margin="3dp"
-            android:id="@+id/b_plus_c"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
-    </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/lay_numbers"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="64dp"
         android:layout_above="@+id/lay_minus"
         android:weightSum="3">
 
 
         <ImageButton
-            android:id="@+id/Button1"
-            android:layout_width="136dp"
-            android:layout_height="111dp"
+            android:id="@+id/image1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:adjustViewBounds="true"
-            android:onClick="minusFruitsArray"
+            android:background="@drawable/fraise"
             android:scaleType="centerCrop"
-            tools:ignore="OnClick" />
+            android:onClick="chooseItem"/>
 
         <ImageButton
-            android:id="@+id/Button2"
-            android:layout_width="136dp"
-            android:layout_height="111dp"
+            android:id="@+id/image2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:adjustViewBounds="true"
-            android:background="@drawable/fraise"
-            android:scaleType="centerCrop" />
+            android:background="@drawable/peach"
+            android:scaleType="centerCrop"
+            android:onClick="chooseItem"/>
 
         <ImageButton
-            android:id="@+id/Button3"
-            android:layout_width="136dp"
-            android:layout_height="111dp"
+            android:id="@+id/image3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:adjustViewBounds="true"
-            android:background="@drawable/fraise"
-            android:scaleType="centerCrop" />
+            android:background="@drawable/banane"
+            android:scaleType="centerCrop"
+            android:onClick="chooseItem"/>
+
+        <ImageButton
+            android:id="@+id/image4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/kiwi"
+            android:scaleType="centerCrop"
+            android:onClick="chooseItem"
+            />
+
+        <ImageButton
+            android:id="@+id/image5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/prune"
+            android:scaleType="centerCrop"
+            android:onClick="chooseItem"/>
+
+        <ImageButton
+            android:id="@+id/image6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/grape"
+            android:scaleType="centerCrop"
+            android:onClick="chooseItem"/>
+
+        <ImageButton
+            android:id="@+id/image7"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/orange"
+            android:scaleType="centerCrop"
+            android:onClick="chooseItem"/>
 
         <TextView
             android:id="@+id/tv_number_c"
@@ -95,29 +101,7 @@
         android:layout_above="@+id/b_check"
         android:weightSum="3">
 
-        <Button
-            android:id="@+id/b_minus_a"
-            android:layout_margin="3dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="-" />
 
-        <Button
-            android:layout_margin="3dp"
-            android:id="@+id/b_minus_b"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="-" />
-
-        <Button
-            android:id="@+id/b_minus_c"
-            android:layout_margin="3dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="-" />
 
     </LinearLayout>
 
@@ -129,11 +113,11 @@
         android:layout_centerHorizontal="true"
         android:text="check" />
 
+
     <TextView
         android:id="@+id/tv_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/lay_plus"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text=""/>
@@ -148,8 +132,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="325dp"
-        android:layout_above="@+id/lay_plus"
+        android:layout_height="559dp"
         android:layout_below="@+id/b_resign"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="183dp">

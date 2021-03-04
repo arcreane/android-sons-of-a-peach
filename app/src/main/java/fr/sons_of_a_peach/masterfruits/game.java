@@ -10,174 +10,93 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 
 public class game extends AppCompatActivity {
 
-    Button b_minus_a, b_minus_b, b_minus_c,
-            b_plus_a, b_plus_b, b_plus_c;
+    // list of available fruit
+    Fruits Grapes = new Fruits("Grapes", true, false, R.drawable.peach);
+    Fruits Orange = new Fruits("Orange", false, true, R.drawable.peach);
+    Fruits Lemon = new Fruits("Lemon", false, true, R.drawable.peach);
+    Fruits Plum = new Fruits("Plum", true, false, R.drawable.peach);
+    Fruits Banana = new Fruits("Banana", false, true, R.drawable.peach);
+    Fruits Kiwi = new Fruits("Kiwi", false, true, R.drawable.peach);
+    Fruits Strawberry = new Fruits("Strawberry", false, false, R.drawable.peach);
+    Fruits Raspberry = new Fruits("Raspberry", false, false, R.drawable.peach);
 
-    Button b_check, b_resign;
+    // Fruit basket = Fruits
+    Fruits[] Fruits = {Banana, Kiwi, Strawberry, Raspberry, Grapes, Orange, Lemon, Plum};
+    Fruits[] generated_answer = generate_answer();
 
-    TextView tv_number_a, tv_number_b, tv_number_c;
-    TextView tv_info, tv_output;
+    public Fruits[] generate_answer() {
+        int inserted_fruit = 0;
+        Fruits[] result = new Fruits[4];
 
-    Random r;
+        while (inserted_fruit != 4) {
+            Random rnd = new Random();
+            int proposition = rnd.nextInt(Fruits.length);
+            boolean isValid = true;
 
-    int guessA = 1, guessB = 2, guessC = 3;
-    int generatedA, generatedB, generatedC;
-    int bulls = 0, cows = 0;
-
-    String output = "";
-
-    int tries = 0;
-
-
-    @SuppressLint("CutPasteId")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
-
-        // Button
-        // Buttons minus
-        b_minus_a = (Button) findViewById(R.id.b_minus_a);
-        b_minus_b = (Button) findViewById(R.id.b_minus_b);
-        b_minus_c = (Button) findViewById(R.id.b_minus_c);
-        // Button plus
-        b_plus_a = (Button) findViewById(R.id.b_plus_a);
-        b_plus_b = (Button) findViewById(R.id.b_plus_b);
-        b_plus_c = (Button) findViewById(R.id.b_plus_c);
-        // Button check
-        b_check = (Button) findViewById(R.id.b_check);
-        // Button resign
-        b_resign = (Button) findViewById(R.id.b_resign);
-
-        // TextView
-        // User screen Number
-       tv_number_a = (TextView) findViewById(R.id.tv_number_a);
-       tv_number_b = (TextView) findViewById(R.id.tv_number_b);
-       tv_number_c = (TextView) findViewById(R.id.tv_number_c);
-        // Info about good numbers
-        tv_info = (TextView) findViewById(R.id.tv_info);
-        // Numbers output
-        tv_output = (TextView) findViewById(R.id.tv_output);
-
-        r = new Random();
-
-        generateNumber();
-
-        Fruits[] tableau;
-
-        tableau = new Fruits[3];
-        tableau[0] = new Fruits("fraise", true, true, R.drawable.fraise);
-        tableau[1] = new Fruits("framboise", true, false, R.drawable.peach );
-        tableau[2] = new Fruits("banane", false, true, R.drawable.peach);
-
-        Button mButtonMinus;
-        mButtonMinus = findViewById(R.id.b_minus_a);
-        // Minus
-        mButtonMinus.setOnClickListener(new View.OnClickListener() {
-
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                minusFruitsArray(v);
-            }
-
-            private void minusFruitsArray(View v) {
-                for (Fruits fruits : tableau) {
-                    Drawable myDrawable = fruits.setImage();
+            for (int i = 0; i < result.length; i++) {
+                if (result[i] != null) {
+                    if (result[i].getNom().equals(Fruits[proposition].getNom())) {
+                        isValid = false;
+                        break;
+                    }
                 }
             }
-        });
 
-
-        b_minus_b.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                if (guessB > 1) {
-                    guessB--;
-                }
-                tv_number_b.setText("" + guessB);
+            if (isValid) {
+                result[inserted_fruit] = Fruits[proposition];
+                inserted_fruit++;
             }
-        });
+        }
+        return result;
+    }
 
-        b_minus_c.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                if (guessC > 1) {
-                    guessC--;
-                }
-                tv_number_c.setText("" + guessC);
-            }
-        });
+    public void chooseItem(View view){
 
-        // Plus
-        b_plus_a.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                if (guessA < 9) {
-                    guessA++;
-                }
-                tv_number_a.setText("" + guessA);
-            }
-        });
+    }
 
-        b_plus_b.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                if (guessB < 9) {
-                    guessB++;
-                }
-                tv_number_b.setText("" + guessB);
-            }
-        });
 
-        b_plus_c.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                if (guessC < 9) {
-                    guessC++;
-                }
-                tv_number_c.setText("" + guessC);
-            }
-        });
-
-        b_resign.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                b_resign.setEnabled(false);
-                b_check.setEnabled(false);
-
-                tv_info.setText("You lost! the number is : " + generatedA + " " + generatedB + " " + generatedC );
-            }
-        });
-
-        b_check.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (guessA == guessB || guessA == guessC || guessB == guessC){
-                    tv_info.setText("Wrong input");
-                } else {
-                    tries++;
-                    checkNumber();
-                    checkWin();
-                    bulls = 0;
-                    cows = 0;
+    /**
+     * Function who take a generated answer in argument and check if the attempt is ok
+     * p_generated_answer : returned by generate_answer()
+     * p_user_input : an array of string who represent the user answer
+     * return :
+     *
+     * @return an array of integer
+     */
+    public Integer[] user_attempt_checker(Fruits[] p_generated_answer, String[] p_user_input) {
+        Integer[] result = new Integer[4];
+        // on boucle sur les resultats de l'utilisateur
+        // si le fruit est absent on met 0 dans un tableau
+        for (int i = 0; i < p_user_input.length; i++) {
+            int checked_result = 0;
+            for (int j = 0; j < p_generated_answer.length; j++) {
+                if (p_user_input[i].equals(p_generated_answer[j].getNom())) {
+                    if (i == j) {
+                        // sil le fruit est présent et bien placé on met 2 dans un tableau
+                        checked_result = 2;
+                    } else {
+                        // si le fruit est présent on met 1 dans un tableau
+                        checked_result = 1;
+                    }
                 }
             }
-        });
+            result[i] = checked_result;
+        }
+        // on fait un sort() descendant sur le tableau
+        Arrays.sort(result, Collections.reverseOrder());
+        // on retourne le tableau ex: [2,1,0,0]
+        return result;
     }
 
 
@@ -203,55 +122,4 @@ public class game extends AppCompatActivity {
     }
 
 
-    private void checkWin() {
-        if (bulls == 3){
-            b_resign.setEnabled(false);
-            b_check.setEnabled(false);
-            tv_info.setText("You won in " + tries + " tries !");
-        }
-    }
-
-    private void generateNumber(){
-        // generate first digit
-        generatedA = r.nextInt(9) + 1;
-
-        // second digit
-        do {
-            generatedB = r.nextInt(9) + 1;
-        } while (generatedA == generatedB);
-
-        // third digit
-        do {
-            generatedC = r.nextInt(9) + 1;
-        } while (generatedA == generatedC || generatedC == generatedA);
-
-    }
-
-    private void checkNumber(){
-        // bulls
-        if(guessA == generatedA){
-            bulls++;
-        }
-        if(guessB == generatedB){
-            bulls++;
-        }
-        if(guessC == generatedC){
-            bulls++;
-        }
-
-        // crows
-        if(guessA == generatedB || guessA == generatedC){
-            cows++;
-        }
-        if(guessB == generatedA || guessB == generatedC){
-            cows++;
-        }
-        if(guessC == generatedA || guessC == generatedB){
-            cows++;
-        }
-
-        output = output + " " + tries + ". " + guessA + "" + guessB + "" + guessC + " - bulls: " +
-                "Bulls : " + bulls + ", Cows: " + cows + "\n";
-        tv_output.setText(output);
-    }
 }

@@ -1,7 +1,6 @@
 package fr.sons_of_a_peach.masterfruits;
 
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 
 public class Fruits {
 
@@ -19,10 +18,6 @@ public class Fruits {
     }
 
 
-
-    public Drawable setImage(int image) {
-        this.image = image;
-    }
 
     public boolean isWithSeeds() {
         return withSeeds;
