@@ -2,15 +2,18 @@ package fr.sons_of_a_peach.masterfruits;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +23,14 @@ import java.util.Random;
 
 
 public class game extends AppCompatActivity {
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game);
+    }
 
     // list of available fruit
     Fruits Grapes = new Fruits("Grapes", true, false, R.drawable.peach);
@@ -61,10 +72,10 @@ public class game extends AppCompatActivity {
         return result;
     }
 
-    public void chooseItem(View view){
-
+    public void chooseItem(View v){
+        LinearLayout layout1 = findViewById(R.id.try1);
+        layout1.setVisibility(View.VISIBLE);
     }
-
 
     /**
      * Function who take a generated answer in argument and check if the attempt is ok
@@ -120,6 +131,5 @@ public class game extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
 }

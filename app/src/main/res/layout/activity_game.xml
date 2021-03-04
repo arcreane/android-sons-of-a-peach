@@ -2,106 +2,127 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="@drawable/fond4"
     tools:context=".game">
 
 
+    <LinearLayout
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:id="@+id/try1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/greenFonce"
+            android:orientation="horizontal"
+            android:paddingBottom="50dp"
+            android:visibility="invisible"/>
+
+        <LinearLayout
+            android:id="@+id/try2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/greenFonce"
+            android:orientation="horizontal"
+            android:paddingBottom="50dp"
+            android:visibility="invisible"/>
+
+        <LinearLayout
+            android:id="@+id/try3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/greenFonce"
+            android:orientation="horizontal"
+            android:paddingBottom="50dp"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/try4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/greenFonce"
+            android:orientation="horizontal"
+            android:paddingBottom="50dp"
+            android:visibility="invisible"/>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/lay_numbers"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_above="@+id/lay_minus"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="570dp"
         android:weightSum="3">
 
 
         <ImageButton
             android:id="@+id/image1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
             android:adjustViewBounds="true"
             android:background="@drawable/fraise"
-            android:scaleType="centerCrop"
-            android:onClick="chooseItem"/>
+            android:onClick="chooseItem"
+            android:scaleType="centerCrop" />
 
         <ImageButton
             android:id="@+id/image2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
             android:adjustViewBounds="true"
             android:background="@drawable/peach"
-            android:scaleType="centerCrop"
-            android:onClick="chooseItem"/>
+            android:onClick="chooseItem"
+            android:scaleType="centerCrop" />
 
         <ImageButton
             android:id="@+id/image3"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
             android:adjustViewBounds="true"
             android:background="@drawable/banane"
-            android:scaleType="centerCrop"
-            android:onClick="chooseItem"/>
+            android:onClick="chooseItem"
+            android:scaleType="centerCrop" />
 
         <ImageButton
             android:id="@+id/image4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
             android:adjustViewBounds="true"
             android:background="@drawable/kiwi"
-            android:scaleType="centerCrop"
             android:onClick="chooseItem"
-            />
+            android:scaleType="centerCrop" />
 
         <ImageButton
             android:id="@+id/image5"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
             android:adjustViewBounds="true"
             android:background="@drawable/prune"
-            android:scaleType="centerCrop"
-            android:onClick="chooseItem"/>
+            android:onClick="chooseItem"
+            android:scaleType="centerCrop" />
 
         <ImageButton
             android:id="@+id/image6"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:adjustViewBounds="true"
             android:background="@drawable/grape"
-            android:scaleType="centerCrop"
-            android:onClick="chooseItem"/>
+            android:onClick="chooseItem"
+            android:scaleType="centerCrop" />
 
         <ImageButton
             android:id="@+id/image7"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:adjustViewBounds="true"
             android:background="@drawable/orange"
-            android:scaleType="centerCrop"
-            android:onClick="chooseItem"/>
-
-        <TextView
-            android:id="@+id/tv_number_c"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="3" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lay_minus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/b_check"
-        android:weightSum="3">
-
-
+            android:onClick="chooseItem"
+            android:scaleType="centerCrop" />
 
     </LinearLayout>
 
@@ -112,43 +133,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="check" />
-
-
-    <TextView
-        android:id="@+id/tv_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text=""/>
-
-    <Button
-        android:id="@+id/b_resign"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Resign"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="559dp"
-        android:layout_below="@+id/b_resign"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="183dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_output"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp" />
-        </LinearLayout>
-    </ScrollView>
 
 
 </RelativeLayout>
