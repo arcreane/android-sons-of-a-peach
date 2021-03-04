@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 //on crée une nouvelle action Intent
                 //getApplicationContext recupere ts les elements de l'app
                 //2e parametre = la cible
+                ArrayFruits.getArray();
                 Intent nlleActivite = new Intent(getApplicationContext(), game.class);
 
                 //on start l'activité avec en parametre l'Intent.

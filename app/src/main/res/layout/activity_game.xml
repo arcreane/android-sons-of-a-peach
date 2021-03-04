@@ -48,7 +48,6 @@
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:layout_above="@+id/lay_minus"
-        android:layout_marginBottom="-7dp"
         android:weightSum="3">
 
 
@@ -58,24 +57,23 @@
             android:layout_height="111dp"
             android:adjustViewBounds="true"
             android:background="@drawable/fraise"
-            android:scaleType="centerCrop"
-            />
-            <ImageButton
+            android:scaleType="centerCrop" />
+
+        <ImageButton
             android:id="@+id/Button2"
             android:layout_width="136dp"
             android:layout_height="111dp"
             android:adjustViewBounds="true"
             android:background="@drawable/fraise"
-            android:scaleType="centerCrop"
-            />
-            <ImageButton
+            android:scaleType="centerCrop" />
+
+        <ImageButton
             android:id="@+id/Button3"
             android:layout_width="136dp"
             android:layout_height="111dp"
             android:adjustViewBounds="true"
             android:background="@drawable/fraise"
-            android:scaleType="centerCrop"
-            />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/tv_number_c"
