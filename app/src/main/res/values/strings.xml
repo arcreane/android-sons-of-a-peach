@@ -3,4 +3,8 @@
     <string name="exit">Exit</string>
     <string name="menu_settings">Settings</string>
     <string name="check_button_game">Validate</string>
+    <string name="element_text">Element</string>
+    <string name="grid_layout_manager">Grid Layout Manager</string>
+    <string name="linear_layout_manager">Linear Layout Manager</string>
+
 </resources>

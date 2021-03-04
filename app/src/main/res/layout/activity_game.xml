@@ -7,50 +7,23 @@
     android:background="@drawable/fond4"
     tools:context=".game">
 
-
-    <LinearLayout
-        android:id="@+id/preview"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/try1"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/greenFonce"
-            android:orientation="horizontal"
-            android:paddingBottom="50dp"
-            android:visibility="invisible"/>
+            android:background="#8F2B2B"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/text_row_item">
 
-        <LinearLayout
-            android:id="@+id/try2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/greenFonce"
-            android:orientation="horizontal"
-            android:paddingBottom="50dp"
-            android:visibility="invisible"/>
+        </androidx.recyclerview.widget.RecyclerView>
 
-        <LinearLayout
-            android:id="@+id/try3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/greenFonce"
-            android:orientation="horizontal"
-            android:paddingBottom="50dp"
-            android:visibility="invisible" />
+    </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/try4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/greenFonce"
-            android:orientation="horizontal"
-            android:paddingBottom="50dp"
-            android:visibility="invisible"/>
-    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/lay_numbers"

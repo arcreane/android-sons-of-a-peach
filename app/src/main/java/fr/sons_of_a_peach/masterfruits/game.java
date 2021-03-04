@@ -2,21 +2,16 @@ package fr.sons_of_a_peach.masterfruits;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
@@ -24,12 +19,24 @@ import java.util.Random;
 
 public class game extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(Banana.getImage());
+
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        MenuRecAdapter menuRecAdapter = new MenuRecAdapter(list);
+        recyclerView.setAdapter(menuRecAdapter);
+
     }
 
     // list of available fruit
@@ -44,9 +51,9 @@ public class game extends AppCompatActivity {
 
     // Fruit basket = Fruits
     Fruits[] Fruits = {Banana, Kiwi, Strawberry, Raspberry, Grapes, Orange, Lemon, Plum};
-    Fruits[] generated_answer = generate_answer();
+    Fruits[] generated_answer = generate_random();
 
-    public Fruits[] generate_answer() {
+    public Fruits[] generate_random() {
         int inserted_fruit = 0;
         Fruits[] result = new Fruits[4];
 
@@ -73,8 +80,11 @@ public class game extends AppCompatActivity {
     }
 
     public void chooseItem(View v){
-        LinearLayout layout1 = findViewById(R.id.try1);
-        layout1.setVisibility(View.VISIBLE);
+
+
+
+
+
     }
 
     /**
