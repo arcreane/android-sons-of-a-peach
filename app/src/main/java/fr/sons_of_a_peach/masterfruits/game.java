@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,6 +37,7 @@ public class game extends AppCompatActivity {
     int tries = 0;
 
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,17 +71,31 @@ public class game extends AppCompatActivity {
 
         generateNumber();
 
+        Fruits[] tableau;
+
+        tableau = new Fruits[3];
+        tableau[0] = new Fruits("fraise", true, true, R.drawable.fraise);
+        tableau[1] = new Fruits("framboise", true, false, R.drawable.peach );
+        tableau[2] = new Fruits("banane", false, true, R.drawable.peach);
+
+        Button mButtonMinus;
+        mButtonMinus = findViewById(R.id.b_minus_a);
         // Minus
-        b_minus_a.setOnClickListener(new View.OnClickListener() {
+        mButtonMinus.setOnClickListener(new View.OnClickListener() {
+
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                if (guessA > 1) {
-                    guessA--;
+                minusFruitsArray(v);
+            }
+
+            private void minusFruitsArray(View v) {
+                for (Fruits fruits : tableau) {
+                    Drawable myDrawable = fruits.setImage();
                 }
-                tv_number_a.setText("" + guessA);
             }
         });
+
 
         b_minus_b.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
@@ -163,6 +179,7 @@ public class game extends AppCompatActivity {
             }
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

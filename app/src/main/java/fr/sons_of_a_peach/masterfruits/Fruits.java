@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.media.Image;
 
 public class Fruits {
+
     private boolean withSeeds;
     private boolean peelable;
     private String nom;
@@ -17,11 +18,9 @@ public class Fruits {
         this.image = image;
     }
 
-    public int getImage() {
-        return image;
-    }
 
-    public void setImage(int image) {
+
+    public Drawable setImage(int image) {
         this.image = image;
     }
 
@@ -55,6 +54,7 @@ public class Fruits {
                 "withSeeds=" + withSeeds +
                 ", peelable=" + peelable +
                 ", nom='" + nom + '\'' +
+                ", image " + image +
                 '}';
     }
 }

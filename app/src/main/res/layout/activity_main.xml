@@ -28,7 +28,6 @@
         android:text="Mastermind Froot"
         android:textStyle="bold"
         android:textColor="@color/greenFonce"
-
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

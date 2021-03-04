@@ -1,16 +1,19 @@
 package fr.sons_of_a_peach.masterfruits;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 import android.util.SparseIntArray;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
 
-public class ArrayFruits {
+public class ArrayFruits extends AppCompatActivity {
 
  public static Fruits[] getArray() {
 
         Fruits[] tableau;
-
 
         tableau = new Fruits[3];
         tableau[0] = new Fruits("fraise", true, true, R.drawable.fraise);
