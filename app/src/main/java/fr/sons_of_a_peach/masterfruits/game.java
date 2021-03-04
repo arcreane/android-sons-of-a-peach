@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -26,9 +29,15 @@ public class game extends AppCompatActivity {
 
         ArrayList<Integer> list = new ArrayList<>();
         list.add(Banana.getImage());
+        list.add(Plum.getImage());
+        list.add(Strawberry.getImage());
+        list.add(Lemon.getImage());
 
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
+
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setBackground(R.drawable.framboise);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

@@ -30,7 +30,7 @@ public class MenuRecAdapter extends RecyclerView.Adapter<RecViewHolder>{
     }
 
     public void onBindViewHolder(RecViewHolder holder, int i){
-        holder.menuText.setText(mList.get(i));
+        holder.menuText.setImageAlpha(mList.get(i));
     }
 
     @Override
