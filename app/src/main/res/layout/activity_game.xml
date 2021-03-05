@@ -8,8 +8,10 @@
     tools:context=".game">
 
     <RelativeLayout
+        android:id="@+id/relative_layout_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@id/lay_numbers">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
@@ -27,73 +29,117 @@
         android:id="@+id/lay_numbers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="570dp"
-        android:weightSum="3">
+        android:layout_above="@id/choice"
+        android:maxHeight="60dp">
 
 
-        <ImageButton
+        <ImageView
             android:id="@+id/image1"
-            android:layout_width="53dp"
-            android:layout_height="53dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/fraise"
-            android:onClick="chooseStrawberry"
-            android:scaleType="centerCrop" />
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:onClick="selectFruit"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fraise" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/image2"
-            android:layout_width="53dp"
-            android:layout_height="53dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/peach"
-            android:onClick="choosePeach"
-            android:scaleType="centerCrop" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="selectFruit"
+            android:scaleType="fitCenter"
+            android:src="@drawable/peach" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/image3"
-            android:layout_width="53dp"
-            android:layout_height="53dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/banane"
-            android:onClick="chooseItem"
-            android:scaleType="centerCrop" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="selectFruit"
+            android:scaleType="fitCenter"
+            android:src="@drawable/banane" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/image4"
-            android:layout_width="53dp"
-            android:layout_height="53dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/kiwi"
-            android:onClick="chooseItem"
-            android:scaleType="centerCrop" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="selectFruit"
+            android:scaleType="fitCenter"
+            android:src="@drawable/kiwi" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/image5"
-            android:layout_width="53dp"
-            android:layout_height="53dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/prune"
-            android:onClick="chooseItem"
-            android:scaleType="centerCrop" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="selectFruit"
+            android:scaleType="fitCenter"
+            android:src="@drawable/prune" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/image6"
-            android:layout_width="52dp"
-            android:layout_height="52dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/grape"
-            android:onClick="chooseItem"
-            android:scaleType="centerCrop" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="selectFruit"
+            android:scaleType="fitCenter"
+            android:src="@drawable/grape" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/image7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/orange"
-            android:onClick="chooseItem"
-            android:scaleType="centerCrop" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="selectFruit"
+            android:scaleType="fitCenter"
+            android:src="@drawable/orange" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/choice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/b_check"
+        android:maxHeight="100dp">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxHeight="50dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/btn_plus" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxHeight="100dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/btn_plus" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxHeight="100dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/btn_plus" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxHeight="100dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/btn_plus" />
 
     </LinearLayout>
 

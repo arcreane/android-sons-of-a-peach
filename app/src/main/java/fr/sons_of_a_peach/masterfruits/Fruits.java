@@ -1,7 +1,5 @@
 package fr.sons_of_a_peach.masterfruits;
 
-import android.graphics.drawable.Drawable;
-
 public class Fruits {
 
     private boolean withSeeds;
@@ -17,7 +15,9 @@ public class Fruits {
         this.image = image;
     }
 
-    public int getImage() {
+
+
+    public Integer getImage() {
         return image;
     }
 

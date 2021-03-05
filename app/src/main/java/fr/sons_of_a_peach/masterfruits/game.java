@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ScaleDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,10 +24,29 @@ import java.util.Random;
 
 public class game extends AppCompatActivity {
 
+    ImageView selected;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        View.OnClickListener click = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected = (ImageView) v;
+            }
+        };
+        ImageView img1 = findViewById(R.id.imageView1);
+        img1.setOnClickListener(click);
+
+        ImageView img2 = findViewById(R.id.imageView2);
+        img2.setOnClickListener(click);
+
+        ImageView img3 = findViewById(R.id.imageView3);
+        img3.setOnClickListener(click);
+
+        ImageView img4 = findViewById(R.id.imageView4);
+        img4.setOnClickListener(click);
 
         ArrayList<Integer> list = new ArrayList<>();
         list.add(Banana.getImage());
@@ -31,7 +54,7 @@ public class game extends AppCompatActivity {
         list.add(Strawberry.getImage());
         list.add(Lemon.getImage());
 
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -83,20 +106,16 @@ public class game extends AppCompatActivity {
         return result;
     }
 
-    public void choosePeach(View v){
+    public void choosePeach(View v) {
 
         ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
         imageView2.setBackgroundResource(R.drawable.peach);
-        
     }
 
-    public void chooseStrawberry(View v){
 
-        ImageView imageView1 = (ImageView) findViewById(R.id.imageView1);
-        imageView1.setBackgroundResource(R.drawable.fraise);
+    //ImageView imageView1 = (ImageView) findViewById(R.id.imageView1);
+    //imageView1.setBackgroundResource(R.drawable.fraise);
 
-
-    }
 
     /**
      * Function who take a generated answer in argument and check if the attempt is ok
@@ -153,4 +172,11 @@ public class game extends AppCompatActivity {
         }
     }
 
+    public void selectFruit(View view) {
+        ImageView img = (ImageView) view;
+        if (selected != null) {
+            selected.setImageDrawable(img.getDrawable());
+            selected.setLayoutParams(new LinearLayout.LayoutParams(100 , 100));
+        }
+    }
 }
