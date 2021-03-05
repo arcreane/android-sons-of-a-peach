@@ -15,14 +15,12 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#8F2B2B"
             app:layoutManager="LinearLayoutManager"
             tools:listitem="@layout/text_row_item">
 
         </androidx.recyclerview.widget.RecyclerView>
 
     </RelativeLayout>
-
 
 
     <LinearLayout
@@ -40,7 +38,7 @@
             android:layout_height="53dp"
             android:adjustViewBounds="true"
             android:background="@drawable/fraise"
-            android:onClick="chooseItem"
+            android:onClick="chooseStrawberry"
             android:scaleType="centerCrop" />
 
         <ImageButton
@@ -49,7 +47,7 @@
             android:layout_height="53dp"
             android:adjustViewBounds="true"
             android:background="@drawable/peach"
-            android:onClick="chooseItem"
+            android:onClick="choosePeach"
             android:scaleType="centerCrop" />
 
         <ImageButton

@@ -22,7 +22,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             super(view);
             // Define click listener for the ViewHolder's View
 
-            textView = (TextView) view.findViewById(R.id.imageView);
+            textView = (TextView) view.findViewById(R.id.imageView1);
         }
 
         public TextView getTextView() {

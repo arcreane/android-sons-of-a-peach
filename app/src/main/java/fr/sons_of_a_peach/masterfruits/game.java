@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,9 +33,6 @@ public class game extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
-
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
-        imageView.setBackground(R.drawable.framboise);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -88,10 +83,17 @@ public class game extends AppCompatActivity {
         return result;
     }
 
-    public void chooseItem(View v){
+    public void choosePeach(View v){
 
+        ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
+        imageView2.setBackgroundResource(R.drawable.peach);
+        
+    }
 
+    public void chooseStrawberry(View v){
 
+        ImageView imageView1 = (ImageView) findViewById(R.id.imageView1);
+        imageView1.setBackgroundResource(R.drawable.fraise);
 
 
     }
