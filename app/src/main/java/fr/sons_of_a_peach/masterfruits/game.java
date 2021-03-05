@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ScaleDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -25,6 +23,7 @@ import java.util.Random;
 public class game extends AppCompatActivity {
 
     ImageView selected;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +33,7 @@ public class game extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 selected = (ImageView) v;
+
             }
         };
         ImageView img1 = findViewById(R.id.imageView1);
@@ -78,9 +78,9 @@ public class game extends AppCompatActivity {
 
     // Fruit basket = Fruits
     Fruits[] Fruits = {Banana, Kiwi, Strawberry, Raspberry, Grapes, Orange, Lemon, Plum};
-    Fruits[] generated_answer = generate_random();
+    Fruits[] generatedRandom = random();
 
-    public Fruits[] generate_random() {
+    public Fruits[] random() {
         int inserted_fruit = 0;
         Fruits[] result = new Fruits[4];
 
@@ -106,16 +106,6 @@ public class game extends AppCompatActivity {
         return result;
     }
 
-    public void choosePeach(View v) {
-
-        ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
-        imageView2.setBackgroundResource(R.drawable.peach);
-    }
-
-
-    //ImageView imageView1 = (ImageView) findViewById(R.id.imageView1);
-    //imageView1.setBackgroundResource(R.drawable.fraise);
-
 
     /**
      * Function who take a generated answer in argument and check if the attempt is ok
@@ -125,14 +115,14 @@ public class game extends AppCompatActivity {
      *
      * @return an array of integer
      */
-    public Integer[] user_attempt_checker(Fruits[] p_generated_answer, String[] p_user_input) {
+    public Integer[] userAttempts(Fruits[] generated_random, String[] inputUser) {
         Integer[] result = new Integer[4];
         // on boucle sur les resultats de l'utilisateur
         // si le fruit est absent on met 0 dans un tableau
-        for (int i = 0; i < p_user_input.length; i++) {
+        for (int i = 0; i < inputUser.length; i++) {
             int checked_result = 0;
-            for (int j = 0; j < p_generated_answer.length; j++) {
-                if (p_user_input[i].equals(p_generated_answer[j].getNom())) {
+            for (int j = 0; j < generated_random.length; j++) {
+                if (inputUser[i].equals(generated_random[j].getNom())) {
                     if (i == j) {
                         // sil le fruit est présent et bien placé on met 2 dans un tableau
                         checked_result = 2;
@@ -178,5 +168,10 @@ public class game extends AppCompatActivity {
             selected.setImageDrawable(img.getDrawable());
             selected.setLayoutParams(new LinearLayout.LayoutParams(100 , 100));
         }
+    }
+
+    public void checkChoices(View v){
+        ImageView check = (ImageView) findViewById(R.id.image1);
+        check.setBackgroundColor(getColor(R.color.green));
     }
 }
